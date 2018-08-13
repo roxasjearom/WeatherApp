@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".weather_details_page.WeatherDetailsActivity">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/topGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".05"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/midHorizontalGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".4"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/midGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/leftGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".05"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/rightGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".95"/>
+
+    <TextView
+        android:id="@+id/tvLocationName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/leftGuideline"
+        app:layout_constraintEnd_toEndOf="@id/rightGuideline"
+        app:layout_constraintTop_toTopOf="@id/topGuideline"
+        android:text="@string/invalid_location"
+        android:textSize="@dimen/text_size_large"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/leftGuideline"
+        app:layout_constraintTop_toBottomOf="@id/tvLocationName"
+        app:layout_constraintEnd_toEndOf="@id/midGuideline"
+        app:layout_constraintBottom_toBottomOf="@id/midHorizontalGuideline"
+        android:textSize="@dimen/text_size_emphasis"
+        android:text="@string/blank_temperature"/>
+
+    <ImageView
+        android:id="@+id/ivWeatherIcon"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/weather_icon"
+        android:src="@drawable/default_weather_icon"
+        app:layout_constraintBottom_toBottomOf="@id/midHorizontalGuideline"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/rightGuideline"
+        app:layout_constraintStart_toStartOf="@id/midGuideline"
+        app:layout_constraintTop_toBottomOf="@id/tvLocationName" />
+
+    <TextView
+        android:id="@+id/tvWeather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/midGuideline"
+        app:layout_constraintEnd_toEndOf="@id/rightGuideline"
+        app:layout_constraintTop_toBottomOf="@id/ivWeatherIcon"
+        app:layout_constraintBottom_toBottomOf="@id/midHorizontalGuideline"
+        android:text="@string/empty_label"
+        android:textSize="@dimen/text_size_regular"/>
+
+    <!-- LABELS -->
+    <TextView
+        android:id="@+id/tvWindLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/leftGuideline"
+        app:layout_constraintTop_toTopOf="@id/midHorizontalGuideline"
+        android:padding="@dimen/padding_small"
+        android:text="@string/wind"
+        android:textSize="@dimen/text_size_regular"/>
+
+    <TextView
+        android:id="@+id/tvHumidityLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/leftGuideline"
+        app:layout_constraintTop_toBottomOf="@id/tvWindLabel"
+        android:padding="@dimen/padding_small"
+        android:text="@string/humidity"
+        android:textSize="@dimen/text_size_regular"/>
+
+    <TextView
+        android:id="@+id/tvAtmosphericPressureLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/leftGuideline"
+        app:layout_constraintTop_toBottomOf="@id/tvHumidityLabel"
+        android:padding="@dimen/padding_small"
+        android:text="@string/atmospheric_pressure"
+        android:textSize="@dimen/text_size_regular"/>
+
+    <TextView
+        android:id="@+id/tvMinTempLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/leftGuideline"
+        app:layout_constraintTop_toBottomOf="@id/tvAtmosphericPressureLabel"
+        android:padding="@dimen/padding_small"
+        android:text="@string/minimum_temperature"
+        android:textSize="@dimen/text_size_regular"/>
+
+    <TextView
+        android:id="@+id/tvMaxTempLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/leftGuideline"
+        app:layout_constraintTop_toBottomOf="@id/tvMinTempLabel"
+        android:padding="@dimen/padding_small"
+        android:text="@string/maximum_temperature"
+        android:textSize="@dimen/text_size_regular"/>
+
+    <!-- VALUES -->
+    <TextView
+        android:id="@+id/tvWindValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/midGuideline"
+        app:layout_constraintTop_toTopOf="@id/midHorizontalGuideline"
+        android:padding="@dimen/padding_small"
+        android:text="@string/wind"
+        android:textSize="@dimen/text_size_regular"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/tvHumidityValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/midGuideline"
+        app:layout_constraintTop_toBottomOf="@id/tvWindValue"
+        android:padding="@dimen/padding_small"
+        android:text="@string/humidity"
+        android:textSize="@dimen/text_size_regular"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/tvAtmosphericPressureValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/midGuideline"
+        app:layout_constraintTop_toBottomOf="@id/tvHumidityValue"
+        android:padding="@dimen/padding_small"
+        android:text="@string/atmospheric_pressure"
+        android:textSize="@dimen/text_size_regular"
+        android:textColor="@android:color/black"/>
+
+
+    <TextView
+        android:id="@+id/tvMinTempValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/midGuideline"
+        app:layout_constraintTop_toBottomOf="@id/tvAtmosphericPressureValue"
+        android:padding="@dimen/padding_small"
+        android:text="@string/minimum_temperature"
+        android:textSize="@dimen/text_size_regular"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/tvMaxTempValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/midGuideline"
+        app:layout_constraintTop_toBottomOf="@id/tvMinTempValue"
+        android:padding="@dimen/padding_small"
+        android:text="@string/maximum_temperature"
+        android:textSize="@dimen/text_size_regular"
+        android:textColor="@android:color/black"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabRefreshDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@drawable/ic_refresh" />
+
+</android.support.constraint.ConstraintLayout>
