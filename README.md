@@ -1,6 +1,6 @@
 # WeatherApp
 
-A simple app that shows weather information of different locations. 
+A simple app that shows weather information of different locations. (The data is being retrieved from https://openweathermap.org/api)
 
 This app contains three main pages:
 * Splash screen page - shows the logo of the app for a brief period. Each build variant has a different splash screen.
